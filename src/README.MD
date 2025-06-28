@@ -11,6 +11,7 @@ python frit_main.py \
   --fold 1 \
   --sweep_count 1 \
   --up_sample 'yes'
+```
 
 
 | Argument        | Type   | Description                                                       |
