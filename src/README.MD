@@ -3,35 +3,25 @@
 Use the following command to run an experiment for Multiclass classification using only FRENCH-ITALIAN Translated DATA
 
 ```bash
-python frit_main.py \
-  --model_name "FacebookAI/roberta-base" \
-  --strategy "multiclass_scratch" \
-  --directory "../data/" \
-  --data_point "llm_both" \
-  --fold 1 \
-  --sweep_count 1 \
-  --up_sample 'yes'
+python train_test.py \
+    --config_source yaml \
+    --yaml_path config_for_experiment.yaml \
+    --data_source all \
+    --strategy multiclass|pair_wise \ 
+    --entity your-wandb-entity \
+    --project your-project-name
 ```
 
-
-| Argument        | Type   | Description                                                       |
-| --------------- | ------ | ----------------------------------------------------------------- |
-| `--model_name`  | string | Name of the transformer model (e.g., `"FacebookAI/roberta-base"`) |
-| `--strategy`    | string | Strategy to use: `"multiclass_scratch"` or `"pair_wise"`          |
-| `--directory`   | string | Path to the data directory                                        |
-| `--data_point`  | string | **Must always be** `"llm_both"`                                   |
-| `--fold`        | int    | Fold number for cross-validation                                  |
-| `--sweep_count` | int    | Number of hyperparameter sweep iterations                         |
-| `--up_sample`   | string | Whether to upsample minority classes: `'yes'` or `'no'`           |
-
-
-## Example
-```bash
-python frit_main.py \
-  --model_name "bert-base-uncased" \
-  --strategy "pair_wise" \
-  --directory "../data/" \
-  --data_point "llm_both" \
-  --fold 2 \
-  --sweep_count 50 \
-  --up_sample 'no'
+| Argument          | Type   | Required | Choices                   | Description                                                  |
+| ----------------- | ------ | -------- | ------------------------- | ------------------------------------------------------------ |
+| `--config_source` | `str`  | **Yes**  | `yaml`, `sweep`           | Source of hyperparameter configuration.                      |
+| `--data_source`   | `str`  | **Yes**  | `all`, `friten`           | Dataset source to use.                                       |
+| `--strategy`      | `str`  | **Yes**  | `multiclass`, `pair_wise` | Training strategy.                                           |
+| `--yaml_path`     | `str`  | No       | -                         | Path to YAML config file (required if `config_source=yaml`). |
+| `--data_point`    | `str`  | No       | -                         | Data point identifier. Default: `'llm_both'`.                |
+| `--fold`          | `str`  | No       | -                         | Cross-validation fold. Default: `'1'`.                       |
+| `--up_sample`     | `flag` | No       | -                         | Enable upsampling for minority classes.                      |
+| `--entity`        | `str`  | No       | -                         | Wandb entity name.                                           |
+| `--project`       | `str`  | No       | -                         | Wandb project name.                                          |
+| `--sweep_id`      | `str`  | No       | -                         | Wandb sweep ID (required if `config_source=sweep`).          |
+| `--run_name`      | `str`  | No       | -                         | Wandb run name (required if `config_source=sweep`).          |
