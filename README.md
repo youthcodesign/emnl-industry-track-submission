@@ -5,6 +5,8 @@ This is the anonymous github repo for EMNLP industry track submission
 ## 📂 Directory Structure and Purpose
 
 - **`data/`**
+  - **`GOLD_TEST.csv`**
+     BullyBench --> GOLD_TEST  
   - **`all_data/role_all/`**  
     Used as input by `train_test.py`. See the `src/` directory for training and testing scripts.
   
