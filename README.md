@@ -1,6 +1,5 @@
 # emnl-industry-track
 This is the anonymous github repo for EMNLP industry track submission
----
 
 ## Hyper-parameter configurations for **BASELINE** on  𝓓<sub>Gold</sub>
 
@@ -13,8 +12,18 @@ This is the anonymous github repo for EMNLP industry track submission
 | GPT2-medium | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Multiclass | Focal Loss     | True        | 4    | 0.3807   | 0.5234      | 0.5775       | 0.2317    | 0.1905     |
 | GPT2-medium | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Pairwise   | Cross Entropy  | True        | 1    | 0.3756   | 0.5000      | 0.5519       | 0.2919    | 0.1587     |
 
-### Configuration files
 
+## To Reproduce Extrinsic Evaluation Results mentioned in Sections 2.6, 3.2, 4 and Appendix D (D.1, D.2, and D.3) follow YAML Config to To Model + Strategy Mapping and Directory Structure + Execution steps
+
+
+### YAML Config to Model + Strategy Mapping
+
+| YAML Filename                                 | Model        | Strategy    | Loss Function   | Fold |
+|----------------------------------------------|--------------|-------------|------------------|------|
+| `roberta_pair_upsample_focal_fold2_all.yaml` | RoBERTa      | Pair-wise   | Focal Loss       | 2    |
+| `roberta_mclass_upsample_cross_fold4_all.yaml`| RoBERTa      | Multiclass  | Cross Entropy    | 4    |
+| `gpt2_mclass_upsample_focal_fold4_all.yaml`  | GPT2-medium  | Multiclass  | Focal Loss       | 4    |
+| `gpt2_pair_upsample_cross_fold1_all.yaml`    | GPT2-medium  | Pairwise    | Cross Entropy    | 1    |
 
 
 
@@ -26,25 +35,29 @@ This is the anonymous github repo for EMNLP industry track submission
      BullyBench --> GOLD_TEST  
   - **`all_data/role_all/`**  
     Used as input by `train_test.py`. See the `src/` directory for training and testing scripts.
-  
   - **`intrinsic/`**  
     Contains the annotation data used by `human_eval_final.ipynb` for intrinsic evaluation.
+
+- **`src/`**
+  - **`README.MD`**
+  - **`requirements.txt`**
+  - **`dependencies.py`**
+  - **`*.yaml`**
+  - **`utils.py`**
+  - **`train_test.py`**
 
 - **`supplementary_files/`**
   - Contains supporting files such as **annotation guides (PDFs)** and other documentation to assist in understanding and reproducing the evaluation process.
 
 ---
 
-## Intrinsic Evaluation of Annotated Data
-
-This repository contains resources and code used for intrinsic evaluation of annotated data across multiple user types and annotators.
-
 ---
+## Intrinsic Evaluation
 
-### 📘 Main Notebook
+### 📘 Notebooks
 
 - **`human_eval_final.ipynb`**  
-  This notebook is designed to **calculate and analyze responses** from the **Intrinsic Evaluation** process for **five distinct annotators**.
+  This notebook is designed to **calculate and analyze responses** from the **Intrinsic Evaluation** process for **five distinct annotators** across **six dimensions of cyberbullying**.
 
 ---
 
