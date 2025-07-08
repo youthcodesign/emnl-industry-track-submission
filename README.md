@@ -36,7 +36,7 @@ This is the anonymous github repo for EMNLP industry track submission
 | GPT2-medium | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Multiclass | Focal Loss     | True        | 4    | 0.3807   | 0.5234      | 0.5775       | 0.2317    | 0.1905     |
 | GPT2-medium | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Pairwise   | Cross Entropy  | True        | 1    | 0.3756   | 0.5000      | 0.5519       | 0.2919    | 0.1587     |
 
-## To Reproduce Extrinsic Evaluation Results mentioned in Sections 2.6, 3.2, 4 and Appendix D (D.1, D.2, and D.3) follow YAML Config to To Model + Strategy Mapping and Directory Structure + Execution steps
+To Reproduce Extrinsic Evaluation Results mentioned in Sections 2.6, 3.2, 4 and Appendix D (D.1, D.2, and D.3) follow YAML Config to To Model + Strategy Mapping and Directory Structure + Execution steps
 
 
 ### Hyper-parameter configurations for **BASELINE** on  𝓓<sub>Gold</sub>
