@@ -1,7 +1,7 @@
 # emnlp-industry-track
 This is the anonymous github repo for EMNLP industry track submission
 
-## Data Availability (𝓓<sub>Gold</sub>)
+## Data Availability
 
 This repository includes experiments based on data from **Verma et al. (2023)** and **Ollagnier et al 2023, 2024**, specifically involving **Italian-to-English** and  **French-to-English** translation and **𝓓<sub>Gold</sub>** (referred in Sections 2.1, 2.3, 2.5, 3.2 and 4), also  **LLM-generated dataset**. 
 
