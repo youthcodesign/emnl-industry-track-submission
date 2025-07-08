@@ -1,4 +1,4 @@
-# emnl-industry-track
+# emnlp-industry-track
 This is the anonymous github repo for EMNLP industry track submission
 
 ## Hyper-parameter configurations for **BASELINE** on  𝓓<sub>Gold</sub>
