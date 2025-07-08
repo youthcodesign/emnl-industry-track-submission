@@ -2,6 +2,23 @@
 This is the anonymous github repo for EMNLP industry track submission
 ---
 
+## Hyper-parameter configurations for **BASELINE** on  𝓓<sub>Gold</sub>
+
+### RoBERTa-base & GPT2-medium Top-2 on 𝓓<sub>Gold</sub>
+
+| Model       | Train-Eval Data                       | Strategy   | Loss Function  | Upsampling? | Fold | Macro-F1 | Enabler F1 | Defender F1 | Bully F1 | Victim F1 |
+|-------------|----------------------------------------|------------|----------------|-------------|------|----------|-------------|--------------|-----------|------------|
+| RoBERTa     | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Pair-wise  | Focal Loss     | True        | 2    | 0.4034   | 0.4422      | 0.6052       | 0.3420    | 0.2243     |
+| RoBERTa     | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Multiclass | Cross Entropy  | True        | 4    | 0.3911   | 0.5156      | 0.5700       | 0.3085    | 0.1702     |
+| GPT2-medium | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Multiclass | Focal Loss     | True        | 4    | 0.3807   | 0.5234      | 0.5775       | 0.2317    | 0.1905     |
+| GPT2-medium | **𝓓₁ ∪ 𝓓₂ ∪ 𝓓₃**                        | Pairwise   | Cross Entropy  | True        | 1    | 0.3756   | 0.5000      | 0.5519       | 0.2919    | 0.1587     |
+
+### Configuration files
+
+
+
+
+---
 ## 📂 Directory Structure and Purpose
 
 - **`data/`**
